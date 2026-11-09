@@ -1,0 +1,82 @@
+#! /usr/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0-dirty)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/ivl/system.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/ivl/va_math.vpi";
+S_0x55b0378b9000 .scope module, "sillyfunction_tb" "sillyfunction_tb" 2 1;
+ .timescale 0 0;
+v0x55b0378d00b0_0 .var "a", 0 0;
+v0x55b0378d0170_0 .var "b", 0 0;
+v0x55b0378d0210_0 .var "c", 0 0;
+v0x55b0378d02e0_0 .net "y", 0 0, L_0x55b0378d0fb0;  1 drivers
+S_0x55b0378b9190 .scope module, "dut" "sillyfunction" 2 5, 3 1 0, S_0x55b0378b9000;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /OUTPUT 1 "y";
+L_0x55b0378d03b0 .functor NOT 1, v0x55b0378d00b0_0, C4<0>, C4<0>, C4<0>;
+L_0x55b0378d0450 .functor NOT 1, v0x55b0378d0170_0, C4<0>, C4<0>, C4<0>;
+L_0x55b0378d0510 .functor AND 1, L_0x55b0378d03b0, L_0x55b0378d0450, C4<1>, C4<1>;
+L_0x55b0378d0620 .functor NOT 1, v0x55b0378d0210_0, C4<0>, C4<0>, C4<0>;
+L_0x55b0378d0710 .functor AND 1, L_0x55b0378d0510, L_0x55b0378d0620, C4<1>, C4<1>;
+L_0x55b0378d0820 .functor NOT 1, v0x55b0378d0170_0, C4<0>, C4<0>, C4<0>;
+L_0x55b0378d08d0 .functor AND 1, v0x55b0378d00b0_0, L_0x55b0378d0820, C4<1>, C4<1>;
+L_0x55b0378d0990 .functor NOT 1, v0x55b0378d0210_0, C4<0>, C4<0>, C4<0>;
+L_0x55b0378d0a50 .functor AND 1, L_0x55b0378d08d0, L_0x55b0378d0990, C4<1>, C4<1>;
+L_0x55b0378d0b60 .functor OR 1, L_0x55b0378d0710, L_0x55b0378d0a50, C4<0>, C4<0>;
+L_0x55b0378d0cd0 .functor NOT 1, v0x55b0378d0170_0, C4<0>, C4<0>, C4<0>;
+L_0x55b0378d0d40 .functor AND 1, v0x55b0378d00b0_0, L_0x55b0378d0cd0, C4<1>, C4<1>;
+L_0x55b0378d0eb0 .functor AND 1, L_0x55b0378d0d40, v0x55b0378d0210_0, C4<1>, C4<1>;
+L_0x55b0378d0fb0 .functor OR 1, L_0x55b0378d0b60, L_0x55b0378d0eb0, C4<0>, C4<0>;
+v0x55b0378b9370_0 .net *"_ivl_0", 0 0, L_0x55b0378d03b0;  1 drivers
+v0x55b0378cf0e0_0 .net *"_ivl_10", 0 0, L_0x55b0378d0820;  1 drivers
+v0x55b0378cf1c0_0 .net *"_ivl_12", 0 0, L_0x55b0378d08d0;  1 drivers
+v0x55b0378cf280_0 .net *"_ivl_14", 0 0, L_0x55b0378d0990;  1 drivers
+v0x55b0378cf360_0 .net *"_ivl_16", 0 0, L_0x55b0378d0a50;  1 drivers
+v0x55b0378cf490_0 .net *"_ivl_18", 0 0, L_0x55b0378d0b60;  1 drivers
+v0x55b0378cf570_0 .net *"_ivl_2", 0 0, L_0x55b0378d0450;  1 drivers
+v0x55b0378cf650_0 .net *"_ivl_20", 0 0, L_0x55b0378d0cd0;  1 drivers
+v0x55b0378cf730_0 .net *"_ivl_22", 0 0, L_0x55b0378d0d40;  1 drivers
+v0x55b0378cf8a0_0 .net *"_ivl_24", 0 0, L_0x55b0378d0eb0;  1 drivers
+v0x55b0378cf980_0 .net *"_ivl_4", 0 0, L_0x55b0378d0510;  1 drivers
+v0x55b0378cfa60_0 .net *"_ivl_6", 0 0, L_0x55b0378d0620;  1 drivers
+v0x55b0378cfb40_0 .net *"_ivl_8", 0 0, L_0x55b0378d0710;  1 drivers
+v0x55b0378cfc20_0 .net "a", 0 0, v0x55b0378d00b0_0;  1 drivers
+v0x55b0378cfce0_0 .net "b", 0 0, v0x55b0378d0170_0;  1 drivers
+v0x55b0378cfda0_0 .net "c", 0 0, v0x55b0378d0210_0;  1 drivers
+v0x55b0378cfe60_0 .net "y", 0 0, L_0x55b0378d0fb0;  alias, 1 drivers
+    .scope S_0x55b0378b9000;
+T_0 ;
+    %vpi_call 2 13 "$dumpfile", "sillyfunction.vcd" {0 0 0};
+    %vpi_call 2 14 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55b0378b9000 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55b0378d00b0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55b0378d0170_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55b0378d0210_0, 0, 1;
+    %vpi_call 2 19 "$display", "a=%b b=%b c=%b -> out=%b", v0x55b0378d00b0_0, v0x55b0378d0170_0, v0x55b0378d0210_0, v0x55b0378d02e0_0 {0 0 0};
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x55b0378d00b0_0, 0, 1;
+    %vpi_call 2 21 "$display", "a=%b b=%b c=%b -> out=%b", v0x55b0378d00b0_0, v0x55b0378d0170_0, v0x55b0378d0210_0, v0x55b0378d02e0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55b0378d00b0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55b0378d0170_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55b0378d0210_0, 0, 1;
+    %vpi_call 2 25 "$display", "a=%b b=%b c=%b -> out=%b", v0x55b0378d00b0_0, v0x55b0378d0170_0, v0x55b0378d0210_0, v0x55b0378d02e0_0 {0 0 0};
+    %vpi_call 2 27 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "sillyfunction_tb.v";
+    "sillyfunction.v";
